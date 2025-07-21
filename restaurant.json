@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "The Coastal Grill",
+    "location": "Charleston, SC",
+    "cuisine": "Seafood",
+    "rating": 4.6,
+    "priceRange": "$$$",
+    "description": "A waterfront restaurant offering fresh Atlantic seafood with a southern twist.",
+    "image": "https://example.com/images/coastal-grill.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Mama Lucia’s Trattoria",
+    "location": "New York, NY",
+    "cuisine": "Italian",
+    "rating": 4.8,
+    "priceRange": "$$",
+    "description": "Family-owned Italian eatery known for handmade pasta and traditional recipes.",
+    "image": "https://example.com/images/mama-lucia.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Spice Theory",
+    "location": "Austin, TX",
+    "cuisine": "Indian",
+    "rating": 4.5,
+    "priceRange": "$$",
+    "description": "Modern Indian cuisine with a bold mix of spices and vegetarian options.",
+    "image": "https://example.com/images/spice-theory.jpg"
+  },
+  {
+    "id": 4,
+    "name": "The Garden Plate",
+    "location": "Portland, OR",
+    "cuisine": "Vegan",
+    "rating": 4.7,
+    "priceRange": "$$",
+    "description": "Plant-based dishes made from fresh, locally-sourced organic ingredients.",
+    "image": "https://example.com/images/garden-plate.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Smokehouse BBQ",
+    "location": "Nashville, TN",
+    "cuisine": "Barbecue",
+    "rating": 4.4,
+    "priceRange": "$",
+    "description": "Slow-cooked ribs and brisket with house-made sauces and live blues music.",
+    "image": "https://example.com/images/smokehouse.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Sushi Hana",
+    "location": "San Francisco, CA",
+    "cuisine": "Japanese",
+    "rating": 4.9,
+    "priceRange": "$$$",
+    "description": "Elegant sushi bar offering omakase experiences and premium sake pairings.",
+    "image": "https://example.com/images/sushi-hana.jpg"
+  },
+  {
+    "id": 7,
+    "name": "El Pueblo",
+    "location": "Los Angeles, CA",
+    "cuisine": "Mexican",
+    "rating": 4.3,
+    "priceRange": "$$",
+    "description": "Authentic Mexican street food in a vibrant and colorful setting.",
+    "image": "https://example.com/images/el-pueblo.jpg"
+  },
+  {
+    "id": 8,
+    "name": "The French Press",
+    "location": "Chicago, IL",
+    "cuisine": "French",
+    "rating": 4.6,
+    "priceRange": "$$$",
+    "description": "Chic bistro serving traditional French dishes and espresso classics.",
+    "image": "https://example.com/images/french-press.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Wok & Roll",
+    "location": "Seattle, WA",
+    "cuisine": "Chinese",
+    "rating": 4.2,
+    "priceRange": "$",
+    "description": "Casual Chinese diner with a fun twist on classic dishes and bubble tea.",
+    "image": "https://example.com/images/wok-roll.jpg"
+  },
+  {
+    "id": 10,
+    "name": "BurgerCraft",
+    "location": "Denver, CO",
+    "cuisine": "American",
+    "rating": 4.5,
+    "priceRange": "$$",
+    "description": "Craft burger joint known for gourmet toppings and house-ground beef.",
+    "image": "https://example.com/images/burgercraft.jpg"
+  }
+]
