@@ -11,69 +11,20 @@ import { UIManager } from 'react-native';
 import { Linking } from 'react-native';
 import save_search_listings from '../JsonFiles/save_search_listings.json'
 import save_search_schedules from '../JsonFiles/save_search_schedules.json'
+import save_search_listing_images from '../JsonFiles/save_search_listing_images.json';
+
 const openInGoogleMaps = (latitude, longitude) => {
   const url = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
   Linking.openURL(url).catch(err => console.error("Failed to open Google Maps", err));
 };
 
 
-
-
-//       const ratings = [
-//   { stars: '5 Stars', width: '75%' },
-//   { stars: '4 Stars', width: '60%' },
-//   { stars: '3 Stars', width: '40%' },
-//   { stars: '2 Stars', width: '20%' },
-//   { stars: '1 Star',  width: '10%' },
-// ];
-
-const locations = [
-  {
-    id: 1,
-    title: 'Location 1',
-    description: 'This is location 1',
-    latitude: 37.79600,
-    longitude: -122.3324,
-  },
-  
-];
-
-
-const images = [
-  { uri: 'https://rb.gy/jf1zq3' },
-  { uri: 'https://shrturl.app/ymL8wP' },
-  { uri: 'https://shrturl.app/3O9mJl' },
-  { uri: 'https://shrturl.app/eouhbe' },
-  { uri: 'https://shrturl.app/NlECCZ' },
-  { uri: 'https://shrturl.app/V-OSJk' },
-  { uri: 'https://shrturl.app/X4KfoY' },
-  { uri: 'https://shrturl.app/_gsM-q' },
-  { uri: 'https://shrturl.app/dJ1xrb' },
-  { uri: 'https://shrturl.app/5QiWE2' },
-  { uri: 'https://shrturl.app/QQH-zt' },
-  { uri: 'https://shrturl.app/jO_2aT' },
-  { uri: 'https://shrturl.app/vf32im' },
-
-];
-
-const hours = [
-  { day: 'Sunday', times: ['9 am - 3 pm'] },
-  { day: 'Sunday', times: ['9 am - 3 pm'] },
-  { day: 'Monday', times: ['9 am - 4 pm'] },
-  { day: 'Monday', times: ['9 am - 4 pm'] },
-  { day: 'Tuesday', times: ['9 am - 3 pm'] },
-  { day: 'Tuesday', times: ['9 am - 3 pm'] },
-  { day: 'Wednesday', times: ['9 am - 4 pm'] },
-  { day: 'Wednesday', times: ['9 am - 4 pm'] },
-  { day: 'Thursday', times: ['9 am - 3 pm'] },
-  { day: 'Thursday', times: ['9 am - 3 pm'] },
-  { day: 'Friday', times: ['9 am - 4 pm'] },
-  { day: 'Friday', times: ['9 am - 4 pm'] },
-  { day: 'Saturday', times: ['9 am - 3 pm'] },
-  { day: 'Saturday', times: ['9 am - 3 pm'] },
-];
-
 const Poogan = () => {
+
+
+
+
+
 
 const route = useRoute();
 const { id } = route.params;
@@ -87,7 +38,7 @@ const [expanded, setExpanded] = useState(false);
   const toggleText = () => {
     setExpanded(!expanded);
   };
-
+const ImagesGallery = save_search_listing_images.filter(item => item.listing_id.toString() === id.toString());
 
 const [activeTab, setActiveTab] = useState('description');
 
@@ -254,7 +205,16 @@ scrollEventThrottle={16}>
           {hours.map((item, index) => (
             <View key={index} style={styles.row}>
               <Text style={{ fontWeight: 'bold', fontSize: 18, marginVertical: 5 }}>{item.day_of_week}</Text>
-              <Text style={{ fontWeight: '500', fontSize: 18 }}>{item.opening_time} - {item.closing_time}</Text>
+              <Text style={{ fontWeight: '500', fontSize: 18 }}>  {(item.opening_time <= 12 && item.opening_time >= 0)
+    ? `${item.opening_time} AM`
+    : (item.opening_time > 12 && item.opening_time < 24)
+      ? `${item.opening_time - 12} PM`
+      : item.opening_time} - 
+  {(item.closing_time <= 12 && item.closing_time >= 0)
+    ? ` ${item.closing_time} AM`
+    : (item.closing_time > 12 && item.closing_time < 24)
+      ? ` ${item.closing_time - 12} PM`
+      : ` ${item.closing_time}`}</Text>
 
 
             </View>
@@ -272,7 +232,24 @@ scrollEventThrottle={16}>
       <View style={{ padding: 20 }}>
         <View style={{ paddingVertical: 20, borderTopColor: 'rgb(177, 177, 177)', borderTopWidth: 1 }}>
           <Text style={{ fontWeight: 'bold', fontSize: 26, marginBottom: 10 }}>Photo Gallery</Text>
-          <FlatList
+<FlatList
+  data={ImagesGallery}
+  horizontal
+  showsHorizontalScrollIndicator={false}
+  keyExtractor={(_, index) => index.toString()}
+  renderItem={({ item, index }) => (
+    <Animatable.View
+      animation="zoomIn"
+      duration={700}
+      delay={index * 300}
+      style={styles.card}
+    >
+      <Image source={{ uri:"https://charlestonrestaurantguide.com/assets/backend/media/searchlisting/"+item.image }} style={styles.image} />
+    </Animatable.View>
+  )}
+/>
+
+          {/* <FlatList
             data={images}
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -287,7 +264,7 @@ scrollEventThrottle={16}>
                 <Image source={{ uri: item.uri }} style={styles.image} />
               </Animatable.View>
             )}
-          />
+          /> */}
         </View>
       </View>
        <View style={styles.container3}>
