@@ -22,10 +22,6 @@ const openInGoogleMaps = (latitude, longitude) => {
 const Poogan = () => {
 
 
-
-
-
-
 const route = useRoute();
 const { id } = route.params;
 
@@ -219,11 +215,7 @@ scrollEventThrottle={16}>
 
             </View>
           ))}
-          {/* {hours.map((hour, index) => (
-        <Text key={index}>
-          {hour.day_of_week}: {hour.opening_time} - {hour.closing_time}
-        </Text>
-      ))} */}
+        
         </View>
 
       </View>
@@ -249,22 +241,6 @@ scrollEventThrottle={16}>
   )}
 />
 
-          {/* <FlatList
-            data={images}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            keyExtractor={(_, index) => index.toString()}
-            renderItem={({ item, index }) => (
-              <Animatable.View
-                animation="zoomIn"
-                duration={700}
-                delay={index * 300} // delay for staggered effect
-                style={styles.card}
-              >
-                <Image source={{ uri: item.uri }} style={styles.image} />
-              </Animatable.View>
-            )}
-          /> */}
         </View>
       </View>
        <View style={styles.container3}>
